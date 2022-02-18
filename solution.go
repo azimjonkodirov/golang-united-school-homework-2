@@ -13,7 +13,7 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum int) float64 {
+func Azimjon(sideLen float64, sidesNum int) float64 {
 	const PI= 3.14
 	var x float64 = 2
 	square:=math.Pow(sideLen,x)
@@ -30,5 +30,5 @@ func CalcSquare(sideLen float64, sidesNum int) float64 {
 }
 
 func main(){
-fmt.Println(CalcSquare(10.0, 0))
+fmt.Println(Azimjon(10.0, 0))
 }
