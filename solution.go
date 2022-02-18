@@ -13,22 +13,33 @@ import (
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func Azimjon(sideLen float64, sidesNum int) float64 {
+type sides int
+
+const SidesTriangle sides = 3
+const SidesSquare sides = 4
+const SidesCircle sides = 0
+
+func CalcSquare(sideLen float64, sidesNum sides) float64 {
 	const PI= 3.14
 	var x float64 = 2
 	square:=math.Pow(sideLen,x)
 	sqrt:=math.Sqrt(3)
 	
-	if sidesNum == 3{
-		return (sqrt/4)*square
-	}else if sidesNum == 4{
-      return square
-	}else if sidesNum ==0{
-		return PI*square
+	var result float64
+	switch sidesNum {
+	case SidesCircle:
+		result = PI * square
+	case SidesTriangle:
+		result = (sqrt * square) / 4
+	case SidesSquare:
+		result = square
+	default:
+		result = 0
 	}
-	return 0
+
+	return result
 }
 
 func main(){
-fmt.Println(Azimjon(10.0, 0))
+fmt.Println(CalcSquare(10.0, 0))
 }
