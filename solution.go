@@ -19,25 +19,19 @@ const SidesTriangle sides = 3
 const SidesSquare sides = 4
 const SidesCircle sides = 0
 
-func CalcSquare(sideLen float64, sidesNum sides) float64 {
-	const PI= 3.14
-	var x float64 = 2
-	square:=math.Pow(sideLen,x)
-	sqrt:=math.Sqrt(3)
-	
-	var result float64
+func CalcSquare(sideLen float64, sidesNum sides) (res float64) {
 	switch sidesNum {
 	case SidesCircle:
-		result = PI * square
+		res = math.Pi * math.Pow(sideLen, 2.0)
 	case SidesTriangle:
-		result = (sqrt * square) / 4
+		res = (math.Pow(sideLen, 2.0) * math.Sqrt(3.0)) / 4
 	case SidesSquare:
-		result = square
+		res = math.Pow(sideLen, 2.0)
 	default:
-		result = 0
+		res = 0
 	}
 
-	return result
+	return
 }
 
 func main(){
