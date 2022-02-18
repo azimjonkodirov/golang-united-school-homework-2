@@ -18,17 +18,15 @@ func CalcSquare(sideLen float64, sidesNum int) float64 {
 	var x float64 = 2
 	square:=math.Pow(sideLen,x)
 	sqrt:=math.Sqrt(3)
-	var res float64
+	
 	if sidesNum == 3{
-		res = (sqrt/4)*square
+		return (sqrt/4)*square
 	}else if sidesNum == 4{
-     res=square
+      return square
 	}else if sidesNum ==0{
-		res=PI*square
-	}else{
-    return 0
+		return PI*square
 	}
-	return  res
+	return 0
 }
 
 func main(){
